@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ÉLITE | Atelier of Masculine Luxury</title>
+  <meta name="description" content="ÉLITE — The pinnacle of masculine refinement. Bespoke tailoring, heritage leather, and uncompromising craftsmanship for the modern gentleman.">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0c0a09;
+      color: #e8e2db;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Masculine luxury palette */
+    :root {
+      --gold: #b8860b;
+      --gold-dark: #8b6508;
+      --deep-charcoal: #0f0e0c;
+      --carbon: #1c1a18;
+      --anthracite: #2a2725;
+      --steel: #3a3532;
+      --cream: #e8e2db;
+      --shadow-heavy: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Header - refined, strong */
+    header {
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background-color: rgba(12, 10, 9, 0.96);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(184, 134, 11, 0.25);
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* FIXED: devdigitax logo size properly — elegant and proportional */
+    .logo img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      transition: transform 0.2s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Navbar & buttons */
+    .navbar-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .navbar-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: var(--cream);
+    }
+
+    .navbar {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .navbar-list {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #d4ccc4;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--gold);
+    }
+
+    .btn {
+      border: none;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 0px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #0c0a09;
+      box-shadow: 0 2px 8px rgba(184,134,11,0.2);
+    }
+
+    .btn-primary:hover {
+      background: #d4af37;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -8px rgba(184,134,11,0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      color: var(--cream);
+    }
+
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: #0c0a09;
+      border-color: var(--gold);
+    }
+
+    /* Hero Section - bold masculinity */
+    .hero {
+      padding: 120px 0 140px;
+      position: relative;
+      background: linear-gradient(135deg, rgba(10, 8, 7, 0.85) 0%, rgba(22, 19, 17, 0.9) 100%), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1920&q=85');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      border-bottom: 1px solid rgba(184,134,11,0.2);
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      color: #f0ebe4;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #bcb4ab;
+      margin-bottom: 40px;
+      border-left: 3px solid var(--gold);
+      padding-left: 24px;
+    }
+
+    /* Collection cards - all masculine */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+
+    .section-text {
+      color: #a0988f;
+      max-width: 700px;
+      margin-bottom: 48px;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+
+    .about-list {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin: 56px 0 80px;
+    }
+
+    .about-card {
+      background: #141210;
+      padding: 40px 28px;
+      border-radius: 0px;
+      box-shadow: var(--shadow-heavy);
+      transition: all 0.3s;
+      flex: 1;
+      min-width: 240px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .about-card:hover {
+      border-bottom: 2px solid var(--gold);
+      transform: translateY(-8px);
+      background: #1a1714;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0.02em;
+    }
+
+    .card-text {
+      color: #bcb0a4;
+      line-height: 1.5;
+    }
+
+    .about-bottom {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .about-bottom-banner {
+      flex: 1;
+      overflow: hidden;
+      filter: grayscale(0.1);
+    }
+
+    .about-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .about-bottom-banner:hover .about-banner {
+      transform: scale(1.02);
+    }
+
+    /* FEATURED: real men, real masculinity */
+    .features {
+      padding: 90px 0;
+      background: #100e0c;
+      border-top: 1px solid rgba(184,134,11,0.2);
+      border-bottom: 1px solid rgba(184,134,11,0.2);
+    }
+
+    .features-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    .features-item {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      flex-wrap: wrap;
+      background: #161311;
+      padding: 36px;
+      transition: 0.25s;
+      border-left: 4px solid var(--gold);
+    }
+
+    .features-item-banner {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .features-item-banner img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      filter: brightness(0.95);
+      transition: transform 0.4s;
+    }
+
+    .features-item-banner img:hover {
+      transform: scale(1.03);
+    }
+
+    .feature-item-content {
+      flex: 1;
+    }
+
+    .item-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 90px 0;
+    }
+
+    .cta-card {
+      background: #0f0e0c;
+      border: 1px solid rgba(184,134,11,0.4);
+      padding: 64px 48px;
+      text-align: center;
+    }
+
+    .cta-title {
+      font-size: 2.3rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cta-text {
+      max-width: 540px;
+      margin: 0 auto 32px;
+      color: #b9aea2;
+    }
+
+    .cta-form {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-form input {
+      padding: 14px 24px;
+      border: none;
+      width: 320px;
+      font-size: 0.9rem;
+      background: #1f1c19;
+      color: white;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .cta-form input:focus {
+      outline: none;
+      border-bottom-width: 2px;
+    }
+
+    /* Contact form */
+    .contact {
+      padding: 80px 0;
+      background: #0a0807;
+    }
+
+    .contact .container {
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .contact-content {
+      flex: 1;
+    }
+
+    .contact-title {
+      font-size: 3rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+    }
+
+    .contact-banner {
+      overflow: hidden;
+    }
+
+    .contact-banner img {
+      width: 100%;
+      height: auto;
+      filter: grayscale(0.3);
+    }
+
+    .contact-form {
+      flex: 1;
+      background: #13110f;
+      padding: 44px;
+      border-top: 3px solid var(--gold);
+    }
+
+    .input-wrapper {
+      margin-bottom: 24px;
+    }
+
+    .input-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      color: #b19b6e;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 14px 18px;
+      background: #1f1c19;
+      border: 1px solid #2c2824;
+      color: #f0e6dc;
+      font-family: inherit;
+      transition: 0.2s;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    textarea.input-field {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050403;
+      color: #b2a89e;
+    }
+
+    .footer-top {
+      padding: 64px 0 48px;
+    }
+
+    .footer-brand .logo img {
+      height: 46px;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-text {
+      margin: 24px 0 16px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .social-list {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .social-link {
+      font-size: 1.4rem;
+      color: #8f8479;
+      transition: color 0.2s;
+    }
+
+    .social-link:hover {
+      color: var(--gold);
+    }
+
+    .footer-link-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 56px;
+      justify-content: space-between;
+    }
+
+    .footer-link-list {
+      list-style: none;
+    }
+
+    .link-title {
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: #e2d4c8;
+    }
+
+    .footer-link {
+      display: block;
+      color: #877d72;
+      text-decoration: none;
+      margin-bottom: 12px;
+      font-size: 0.8rem;
+      transition: 0.2s;
+    }
+
+    .footer-link:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(184,134,11,0.2);
+      padding: 24px 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #645c54;
+    }
+
+    .copyright a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .go-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1a1714;
+      color: var(--gold);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      transition: 0.2s;
+      opacity: 0;
+      visibility: hidden;
+      text-decoration: none;
+      z-index: 99;
+      border: 1px solid rgba(184,134,11,0.5);
+    }
+
+    .go-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .go-top:hover {
+      background: var(--gold);
+      color: #0c0a09;
+      transform: translateY(-4px);
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-24px);
+      animation: slideFade 0.6s forwards;
+    }
+    .fade-in-right {
+      opacity: 0;
+      transform: translateX(24px);
+      animation: slideFade 0.6s forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: translateY(24px);}
+    }
+    @keyframes slideFade {
+      to { opacity: 1; transform: translateX(0);}
+    }
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+
+    @media (max-width: 992px) {
+      .hero-title { font-size: 3.8rem; }
+      .about-list { flex-direction: column; }
+    }
+    @media (max-width: 768px) {
+      .navbar-menu-btn { display: block; }
+      .navbar {
+        position: fixed;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        background: #0c0a09;
+        flex-direction: column;
+        padding: 32px 24px;
+        gap: 28px;
+        transform: translateY(-150%);
+        transition: 0.3s;
+        z-index: 99;
+        border-bottom: 1px solid var(--gold);
+      }
+      .navbar.active { transform: translateY(0);}
+      .navbar-list { flex-direction: column; align-items: center; gap: 24px;}
+      .container { padding: 0 24px;}
+      .hero { padding: 80px 0 100px;}
+      .features-item { flex-direction: column; padding: 24px; }
+      .contact .container { flex-direction: column; }
+    }
+  </style>
+</head>
+<body id="top">
+
+<header>
+  <div class="container">
+    <a href="#" class="logo">
+      <!-- devdigitax-logo.jpeg integrated with correct size, masculine luxury -->
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 70'%3E%3Crect width='220' height='70' fill='%230a0807' rx='4' stroke='%23b8860b' stroke-width='1.2'/%3E%3Ctext x='18' y='46' font-family='Cormorant Garamond, serif' font-size='32' fill='%23e8e2db' font-weight='700' letter-spacing='2'%3Edevdigitax%3C/text%3E%3C/svg%3E" alt="devdigitax logo - luxury menswear atelier" style="height:46px; width:auto;">
+    </a>
+    <div class="navbar-wrapper">
+      <button class="navbar-menu-btn" data-navbar-toggle-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#collections" class="nav-link">Collections</a></li>
+          <li><a href="#about" class="nav-link">Heritage</a></li>
+          <li><a href="#featured" class="nav-link">Signature</a></li>
+          <li><a href="#contact" class="nav-link">Concierge</a></li>
+        </ul>
+        <button class="btn btn-primary">Enter Atelier</button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content fade-in">
+          <h1 class="hero-title">The Code of<br>Masculine Grace</h1>
+          <p class="hero-text">Tailored in darkness, forged in discipline. ÉLITE presents its first fully dedicated menswear atelier — uncompromising structure, rare textiles, and the spirit of true masculinity.</p>
+          <button class="btn btn-primary">Explore the Manifesto</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="collections">
+      <div class="container">
+        <div class="about-top fade-in">
+          <h2 class="section-title">The Trinity of Power</h2>
+          <p class="section-text">Three pillars that define a gentleman's wardrobe. Each crafted for strength, elegance, and legacy.</p>
+          <ul class="about-list">
+            <li class="about-card fade-in stagger-1">
+              <div class="card-icon"><ion-icon name="shirt-outline"></ion-icon></div>
+              <h3 class="card-title">Bespoke Tailoring</h3>
+              <p class="card-text">Hand-cut suits from Vitale Barberis Canonico wool. Each stitch a testament to masculine precision.</p>
+            </li>
+            <li class="about-card fade-in stagger-2">
+              <div class="card-icon"><ion-icon name="watch-outline"></ion-icon></div>
+              <h3 class="card-title">Horology & Metal</h3>
+              <p class="card-text">Limited-run cufflinks, belt buckles, and valet accessories — forged from stainless steel and bronze.</p>
+            </li>
+            <li class="about-card fade-in stagger-3">
+              <div class="card-icon"><ion-icon name="car-outline"></ion-icon></div>
+              <h3 class="card-title">Leather Atelier</h3>
+              <p class="card-text">Full-grain Italian leather bags, weekender duffels, and driving gloves — built to age like courage.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="about-bottom fade-in">
+          <figure class="about-bottom-banner">
+            <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=700&q=85" alt="masculine tailoring detail" class="about-banner">
+          </figure>
+          <div class="about-bottom-content">
+            <h2 class="section-title">Forged for The Few</h2>
+            <p class="section-text">We reject fast fashion and fleeting trends. ÉLITE stands for permanence, raw authenticity, and the return to true masculinity. Every garment is tested by real men who understand tradition, grit, and quiet confidence.</p>
+            <button class="btn btn-secondary">Discover Our Foundry</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED: real men, real masculinity - replaced all female references -->
+    <section class="features" id="featured">
+      <div class="container">
+        <h2 class="section-title fade-in">The Armoury Edit</h2>
+        <p class="section-text fade-in">Icons for the modern gentleman — strength through simplicity, power through restraint.</p>
+        <ul class="features-list">
+          <li class="features-item fade-in-left">
+            <figure class="features-item-banner">
+              <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=600&q=85" alt="men's luxury leather accessories">
+            </figure>
+            <div class="feature-item-content">
+              <h3 class="item-title">The 'Vanguard' Leather Goods</h3>
+              <p class="item-text">Hand-stitched full-grain leather briefcases and weekenders. Each piece develops a unique patina — a reflection of a man's journey. Lined with raw canvas, built for decades.</p>
+            </div>
+          </li>
+          <li class="features-item fade-in-right">
+            <figure class="features-item-banner">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=85" alt="sharp men's tailoring and suit">
+            </figure>
+            <div class="feature-item-content">
+              <h3 class="item-title">The 'Sovereign' Suit</h3>
+              <p class="item-text">Double-breasted peak lapels, half-canvas construction, and mother-of-pearl buttons. The ultimate armor for boardrooms and black-tail events. Real masculinity embodied.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta fade-in">
+      <div class="container">
+        <div class="cta-card">
+          <h3 class="cta-title">The Gentlemen's Circle</h3>
+          <p class="cta-text">Access private trunk shows, early delivery of seasonal collections, and invitations to masculine craft gatherings.</p>
+          <form class="cta-form" id="newsletterForm">
+            <input type="email" placeholder="Your email address" required id="newsEmail">
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact fade-in" id="contact">
+      <div class="container">
+        <div class="contact-content">
+          <h2 class="contact-title">Schedule a<br>Bespoke Consultation</h2>
+          <figure class="contact-banner">
+            <img src="https://images.unsplash.com/photo-1533690876270-8f4d75c6a0e2?w=500&q=85" alt="luxury men's tailor at work">
+          </figure>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="input-wrapper"><label class="input-label">Full name *</label><input type="text" class="input-field" placeholder="James Sterling" required id="name"></div>
+          <div class="input-wrapper"><label class="input-label">Phone / WhatsApp</label><input type="tel" class="input-field" placeholder="+1 212 555 9876" id="phone"></div>
+          <div class="input-wrapper"><label class="input-label">Email *</label><input type="email" class="input-field" placeholder="james@sterling.com" required id="email"></div>
+          <div class="input-wrapper"><label class="input-label">Your Inquiry *</label><textarea class="input-field" placeholder="Tell us about your tailoring needs or desired piece..." required id="message"></textarea></div>
+          <button type="submit" class="btn btn-primary">Request Appointment →</button>
+        </form>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-brand">
+        <a href="#" class="logo"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 70'%3E%3Crect width='220' height='70' fill='%230a0807' rx='4' stroke='%23b8860b' stroke-width='1'/%3E%3Ctext x='18' y='46' font-family='Cormorant Garamond, serif' font-size='32' fill='%23e8e2db' font-weight='700'%3Edevdigitax%3C/text%3E%3C/svg%3E" alt="devdigitax" style="height:44px;"></a>
+        <p class="footer-text">Follow the Atelier</p>
+        <ul class="social-list">
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        </ul>
+      </div>
+      <div class="footer-link-box">
+        <ul class="footer-link-list"><li><h3 class="link-title">THE HOUSE</h3></li><li><a href="#" class="footer-link">Our Heritage</a></li><li><a href="#" class="footer-link">Craftsmanship</a></li><li><a href="#" class="footer-link">Sustainability</a></li></ul>
+        <ul class="footer-link-list"><li><h3 class="link-title">COLLECTIONS</h3></li><li><a href="#" class="footer-link">Tailoring</a></li><li><a href="#" class="footer-link">Outerwear</a></li><li><a href="#" class="footer-link">Leather Goods</a></li></ul>
+        <ul class="footer-link-list"><li><h3 class="link-title">CONCIERGE</h3></li><li><a href="#" class="footer-link">Bespoke Enquiries</a></li><li><a href="#" class="footer-link">Shipping & Returns</a></li><li><a href="#" class="footer-link">Private Events</a></li></ul>
+        <ul class="footer-link-list"><li><h3 class="link-title">CONNECT</h3></li><li><a href="#" class="footer-link">Instagram</a></li><li><a href="#" class="footer-link">LinkedIn</a></li><li><a href="#" class="footer-link">Press</a></li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p class="copyright">&copy; 2025 ÉLITE — devdigitax Atelier | For the modern masculine spirit. All rights reserved.</p></div>
+</footer>
+
+<a href="#top" class="go-top" data-go-top><ion-icon name="chevron-up-outline"></ion-icon></a>
+
+<script>
+  const navbarToggle = document.querySelector("[data-navbar-toggle-btn]");
+  const navbar = document.querySelector("[data-navbar]");
+  if(navbarToggle && navbar){
+    navbarToggle.addEventListener("click", () => navbar.classList.toggle("active"));
+    document.querySelectorAll(".nav-link").forEach(link => link.addEventListener("click", () => navbar.classList.remove("active")));
+  }
+  const goTopBtn = document.querySelector("[data-go-top]");
+  window.addEventListener("scroll", () => {
+    if(window.scrollY >= 300) goTopBtn.classList.add("active");
+    else goTopBtn.classList.remove("active");
+  });
+  document.getElementById("newsletterForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("newsEmail")?.value;
+    if(email && email.includes('@')) { alert("✓ Welcome, sir. You are now part of The Gentlemen's Circle."); e.target.reset(); }
+    else alert("Please provide a valid email to receive exclusive masculine luxury updates.");
+  });
+  document.getElementById("contactForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("name")?.value;
+    const mail = document.getElementById("email")?.value;
+    if(name && mail && mail.includes('@')) { alert(`✓ ${name}, your concierge request has been received. A brand representative will reply within 24 hours.`); e.target.reset(); }
+    else alert("Please fill all required fields correctly.");
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      const targetId = this.getAttribute("href");
+      if(targetId === "#" || targetId === "") return;
+      const target = document.querySelector(targetId);
+      if(target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth", block: "start" }); if(navbar?.classList.contains("active")) navbar.classList.remove("active"); }
+    });
+  });
+</script>
+</body>
+</html>
